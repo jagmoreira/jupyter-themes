@@ -255,7 +255,7 @@ def style_layout(style_less,
     promptBorder = '2px solid @prompt-line'
     tcPromptBorder = '2px solid @tc-prompt-std'
     promptMinWidth = 13.5
-    tcPromptWidth = promptMinWidth
+    tcPromptWidth = 14.2
     tcPromptFontsize = "@prompt-fontsize"
     ccOutputBG = '@cc-output-bg-default'
 
@@ -332,14 +332,18 @@ def toggle_settings(toolbar=False, nbname=False, hideprompt=False):
         toggle += 'div#maintoolbar {display: none !important;}\n'
     if nbname:
         toggle += ('span.save_widget span.filename {margin-left: 8px;'
-                   'font-size: 120%; color: @nb-name-fg; background-color:'
-                   '@cc-input-bg;}\n')
+                   'font-size: 120%; color: @nb-name-fg;}\n')
         toggle += ('span.save_widget span.filename:hover {color:'
                    '@nb-name-hover; background-color: @cc-input-bg;}\n')
         toggle += ('#menubar {padding-top: 4px; background-color:'
                    '@notebook-bg;}\n')
     else:
         toggle += '#header-container {display: none !important;}\n'
+        toggle += ('span.checkpoint_status, span.autosave_status {'
+                   'font-size: small; display: none;}\n')
+        toggle += ('#kernel_logo_widget, #kernel_logo_widget '
+                   '.current_kernel_logo {display: none;}\n')
+        toggle += 'div#ipython_notebook {display: none;}'
     if hideprompt:
         toggle += 'div.prompt.input_prompt {display: none !important;}\n'
         toggle += 'div.prompt.output_prompt {width: 5ex !important;}\n'
