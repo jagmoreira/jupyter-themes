@@ -490,10 +490,7 @@ div#header-container {
 body > #header .header-bar {
     width: 100%;
     background: @notebook-bg;
-}
-span.checkpoint_status, span.autosave_status {
-    font-size: small;
-    display: none;
+    border-bottom: 2px solid @selected-third;
 }
 #menubar, div#menubar {
     background-color: @notebook-bg;
@@ -529,8 +526,6 @@ p.navbar-text.indicator_area {
     color: @notebook-fg;
     display: block;
     line-height: 1.5em;
-    padding-top: 14px;
-    padding-bottom: 11px;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -779,13 +774,6 @@ div.notification_widget {
     vertical-align: text-top !important;
     margin-top: 6px !important;
     z-index: 1000;
-}
-#kernel_logo_widget,
-#kernel_logo_widget .current_kernel_logo {
-    display: none;
-}
-div#ipython_notebook {
-    display: none;
 }
 i.fa.fa-icon {
     -webkit-font-smoothing: antialiased;
